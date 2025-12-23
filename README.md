@@ -37,6 +37,71 @@ M3x16mm screws
 M3x5mx4mm heatset inserts
 3D PRINTED CASE ONLY. NO ACRYLIC.
 
+QMK Firmawre for Keyboard
+```
+import board
+
+from kmk.kmk_keyboard import KMKKeyboard
+from kmk.scanners.keypad import KeysScanner
+from kmk.keys import KC
+from kmk.modules.macros import Press, Release, Tap, Macros
+
+
+keyboard = KMKKeyboard()
+
+
+macros = Macros()
+keyboard.modules.append(macros)
+
+
+PINS = [board.D3, board.D4, board.D2, board.D1]
+
+
+keyboard.matrix = KeysScanner(
+    pins=PINS,
+    value_when_pressed=False,
+)
+
+Mute = KC.MACRO(
+	Press(KC.LCTL)
+	Tap(KC.F4)
+	Delay(10)
+	Release(KC.F4)
+
+)
+NextSong = KC.MACRO(
+	Press(KC.LCTL)
+	Tap(KC.F8)
+	Delay(10)
+	Release(KC.F8)
+
+)
+PrevSong = KC.MACRO(
+	Press(KC.LCTL)
+	Tap(KC.F4)
+	Delay(10)
+	Release(KC.F4)
+
+)
+
+Pause = KC.MACRO(
+	Press(KC.LCTL)
+	Tap(KC.F7)
+	Delay(10)
+	Release(KC.F7)
+
+)
+
+
+keyboard.keymap = [
+    [Mute, , Pause, PrevSong,NextSong ]
+]
+
+# Start kmk!
+if __name__ == '__main__':
+    keyboard.go()
+```
+
 
 
 
