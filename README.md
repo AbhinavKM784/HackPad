@@ -1,5 +1,6 @@
 # HackPad
 Designing a 4 key hackpad for nusic playback. Forgot the volume knob
+Designed it so that i can pause/play, mute, skip music,replay music in 4 buttons.
 
 Schematic
 <img width="559" height="587" alt="HackPad PCB Schematics" src="https://github.com/user-attachments/assets/8ea31ab3-7aa1-48fe-9cf7-9e9d4c5b9f1d" />
